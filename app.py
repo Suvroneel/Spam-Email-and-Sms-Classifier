@@ -72,3 +72,25 @@ if st.button('Predict'):
     
   else:
       st.header("Not Spam")
+
+
+theme_bg_color = st.get_option("theme.backgroundColor")
+
+# Footer
+st.markdown(f"""
+    <style>
+        .footer {{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: {theme_bg_color};
+            text-align: center;
+            padding: 10px;
+        }}
+    </style>
+    <div class="footer">
+        <p style="font-size: 16px;">Created by Suvroneel Nathak</p>
+    </div>
+""", unsafe_allow_html=True)
+# unsafe_allow_html=True) makes the footer run
