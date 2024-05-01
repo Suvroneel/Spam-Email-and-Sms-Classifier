@@ -14,9 +14,6 @@ from string import *
 
 
 
-# Optionally display existing data with a checkbox
-if st.checkbox("Show Existing Data"):
-  st.dataframe(existing_data)
 
 
 nltk.download('stopwords')
