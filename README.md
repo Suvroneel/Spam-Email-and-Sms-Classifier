@@ -39,4 +39,6 @@ Website implement
 Creating a pipeline
 
 Connecting with streamlit
+==============================================
+🎉Update 1 - Now user's input data and their respective output will be recorded and will be used for futher training and testings
 
