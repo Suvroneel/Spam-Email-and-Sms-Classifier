@@ -1,5 +1,8 @@
 import nltk
 
+import toml
+# GSheets lib
+from streamlit_gsheets import GSheetsConnection
 
 import streamlit as st
 import pickle
@@ -12,6 +15,16 @@ from nltk import *
 from nltk.corpus import *
 from string import *
 
+# Establishing Google sheets connection
+
+conn = st.connection("gsheets", type=GSheetsConnection )
+
+# fetching exist data ue cols = no of cols , ttl = time to live
+existing_data = conn.read(worksheet="User Data", usecols=list(range(2)), ttl=5)
+
+existing_data = existing_data.dropna(how="all")  # droping empty vals
+
+#st.dataframe(existing_data)
 
 
 
@@ -84,7 +97,19 @@ if st.button('Predict'):
     st.header("Not spam")
     prediction = "Not spam"
 
-  
+    input_data = pd.DataFrame(
+        [
+            {
+                "Input Sentence": input_sms,
+                "Output": prediction
+            }
+        ]
+    )
+    #add inputdata to existing data
+    updated_df= pd.concat([existing_data,input_data],ignore_index=True)
+
+    #update goggle sheets
+    conn.update(worksheet="User Data",data = updated_df)  
 
 
 
