@@ -1,5 +1,5 @@
 nltk==3.8.1
-numpy==1.24.4
+numpy==1.26.4
 scikit-learn==1.2.2
 streamlit==1.30.0
 st-gsheets-connection
