@@ -4,7 +4,6 @@ import toml
 # GSheets lib
 from streamlit_gsheets import GSheetsConnection
 
-
 import streamlit as st
 import pickle
 import string
@@ -20,14 +19,16 @@ from string import *
 
 conn = st.connection("gsheets", type=GSheetsConnection )
 
-
 # fetching exist data ue cols = no of cols , ttl = time to live
 existing_data = conn.read(worksheet="User Data", usecols=list(range(2)), ttl=5)
 
 existing_data = existing_data.dropna(how="all")  # droping empty vals
 
+#st.dataframe(existing_data)
 
-# Nltk
+
+
+
 nltk.download('stopwords')
 nltk.download('punkt')
 
@@ -95,7 +96,7 @@ if st.button('Predict'):
   else:
     st.header("Not spam")
     prediction = "Not spam"
-    
+
     input_data = pd.DataFrame(
         [
             {
@@ -104,12 +105,12 @@ if st.button('Predict'):
             }
         ]
     )
-    
     #add inputdata to existing data
     updated_df= pd.concat([existing_data,input_data],ignore_index=True)
 
     #update goggle sheets
     conn.update(worksheet="User Data",data = updated_df)
+
 
 
 theme_bg_color = st.get_option("theme.backgroundColor")
@@ -131,5 +132,3 @@ st.markdown(f"""
     <p style="font-size: 16px;">Created by Suvroneel Nathak</p>
   </div>
 """, unsafe_allow_html=True)
-
-
