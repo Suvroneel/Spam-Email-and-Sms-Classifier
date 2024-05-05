@@ -1,7 +1,7 @@
 🌟🌟🌟Spam sms Documentation:  It’s an end to end Ml project to detect spam messages Classification problem :🌟🌟🌟
 ==================================================
 
-💖💖💖Modus Operand :-Clean the data 
+📌Modus Operand :-Clean the data 
 a. remove empty columns 
 b. Label Encode spam and ham to 1 & 0 respectively 
 c. Checking null values 
