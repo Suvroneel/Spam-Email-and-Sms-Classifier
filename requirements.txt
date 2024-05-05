@@ -3,4 +3,4 @@ numpy==1.26.3
 scikit-learn==1.2.2
 streamlit==1.30.0
 st-gsheets-connection
-
+pyspellchecker==0.8.2
