@@ -8,19 +8,19 @@ c. Checking null values
 d. Checking duplicates and removing them
 
 
-✨✨Exploratory Data Analysis(EDA) :-Analyze the data a. Showing percentage of spam , not spam in pie chart b. We count no of alphabets,words,sentences in each sms and analyze that c. Use Histogram,Corr Coefficient to take decision
+✨✨Exploratory Data Analysis(EDA) :-Analyze the data 
+a. Showing percentage of spam , not spam in pie chart 
+b. We count no of alphabets,words,sentences in each sms and analyze that 
+c. Use Histogram,Corr Coefficient to take decision
 
 🎉🎉Data preprocessing : Vectorization , other edits
 
-💫💫Lower Casing
+a. Lower Casing
 
-💖💖 Tokenization
+b.  Tokenization
 
-🎁Removing Special Characters
+c. Removing Special Characters,stop words and punctuations ,Stemming (converting words like run running etc to one word)
 
-Removing stop words and punctuations
-
-Stemming - converting words like run running etc to one word
 
 Adding this converted text into a new column
 
@@ -48,5 +48,6 @@ Connecting with streamlit
 
 Updates
 =======================================================
-🎉Update 1 - Now user's input data and their respective output will be recorded and will be used for futher training and testings
-🎉Update 2 - Minor fixes . Implemented speeling check for further checking
+📍Update 1 - Now user's input data and their respective output will be recorded and will be used for futher training and testings ✔✔
+
+📍Update 2 - Minor fixes . Implemented speeling check for further checking ✔✔
