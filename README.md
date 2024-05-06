@@ -1,4 +1,4 @@
-🌟🌟🌟Spam sms Documentation:  It’s an end to end Ml project to detect spam messages Classification problem :🌟🌟🌟
+🌟Spam sms Documentation:  It’s an end to end Ml project to detect spam messages Classification problem :
 ==================================================
 
 📌Modus Operand :-Clean the data 
