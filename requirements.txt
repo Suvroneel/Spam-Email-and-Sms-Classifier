@@ -4,4 +4,4 @@ scikit-learn==1.2.2
 streamlit==1.30.0
 st-gsheets-connection
 textblob==0.18.0.post0
-bootstrap
+
