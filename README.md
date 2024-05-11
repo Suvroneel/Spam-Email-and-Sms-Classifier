@@ -51,3 +51,5 @@ Updates
 📍Update 1 - Now user's input data and their respective output will be recorded and will be used for futher training and testings ✔✔
 
 📍Update 2 - Minor fixes . Implemented speeling check for further checking ✔✔
+
+📍Update 3 - The model is much more trained and a navbar along with a breath taking wallpaper is added
