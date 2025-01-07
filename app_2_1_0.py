@@ -145,7 +145,7 @@ def transform_text(text):
 tfidf = pickle.load(open('./Model/vectorizer_mkii.pkl', 'rb'))
 model = pickle.load(open('./Model/model_mkii.pkl', 'rb'))
 
-st.title("Email/Sms Classifier (v 2.1.0)")
+st.title("Spam Email and Sms Classifier (v 2.1.0)")
 
 
 
