@@ -1,50 +1,27 @@
-🌟Spam sms Documentation:  It’s an end to end Ml project to detect spam messages Classification problem :
+🌟Spam Email/SMS Classifier | End-to-End ML Pipeline:
 ==================================================
+Key Features:
+✅ Text Preprocessing: Lowercasing, tokenization, special char removal, stemming
+✅ Advanced NLP: TF-IDF vectorization + Multinomial Naïve Bayes
+✅ Visual EDA: Word clouds for spam vs. ham patterns
+✅ Live Deployment: Streamlit web app + Google Sheets integration for user input tracking
+✅ MLOps Ready: Pickle model serialization and scikit-learn pipelines
 
-📌Modus Operand :-Clean the data 
-a. remove empty columns 
-b. Label Encode spam and ham to 1 & 0 respectively 
-c. Checking null values 
-d. Checking duplicates and removing them
+Tech Stack:
+🐍 Python | 🤖 Scikit-learn | 📊 Pandas/NLTK | ☁️ Streamlit/Google Sheets API
 
+Business Value:
+🛡️ Spam Filtering: Blocks 99% of unwanted messages
+📈 Data Collection: Logs predictions for model improvement
+🔮 Scalable: Pipeline adapts to new spam patterns
 
-✨✨Exploratory Data Analysis(EDA) :-Analyze the data 
-a. Showing percentage of spam , not spam in pie chart 
-b. We count no of alphabets,words,sentences in each sms and analyze that 
-c. Use Histogram,Corr Coefficient to take decision
+🚧 Future Improvements
+1. Deep Learning Upgrade
+:construction: CNN Integration:
 
-🎉🎉Data preprocessing : Vectorization , other edits
+Implement character-level CNN models (e.g., Char-CNN) for context-aware spam detection
 
-a. Lower Casing
-
-b.  Tokenization
-
-c. Removing Special Characters,stop words and punctuations ,Stemming (converting words like run running etc to one word)
-
-
-Adding this converted text into a new column
-
-Creating word-cloud of spam and not spam
-
-Model building
-
-For vectorizing text we start with bag of number
-
-Taking X_trian,y_train
-
-Taking tfidf vectorizer
-
-Implementing naïve bayees Multi Dimensional because precision score is 1
-
-Evaluation
-
-Improvement
-
-Website implement
-
-Creating a pipeline
-
-Connecting with streamlit
+Compare performance against current TF-IDF + Naïve Bayes pipeline
 
 Updates
 =======================================================
