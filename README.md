@@ -1,14 +1,19 @@
 🌟Spam Email/SMS Classifier | End-to-End ML Pipeline:
 ==================================================
-Key Features:
-✅ Text Preprocessing: Lowercasing, tokenization, special char removal, stemming
-✅ Advanced NLP: TF-IDF vectorization + Multinomial Naïve Bayes
-✅ Visual EDA: Word clouds for spam vs. ham patterns
-✅ Live Deployment: Streamlit web app + Google Sheets integration for user input tracking
-✅ MLOps Ready: Pickle model serialization and scikit-learn pipelines
-
 Tech Stack:
 🐍 Python | 🤖 Scikit-learn | 📊 Pandas/NLTK | ☁️ Streamlit/Google Sheets API
+
+Key Features:
+
+✅ Text Preprocessing: Lowercasing, tokenization, special char removal, stemming
+
+✅ Advanced NLP: TF-IDF vectorization + Multinomial Naïve Bayes
+
+✅ Visual EDA: Word clouds for spam vs. ham patterns
+✅ Live Deployment: Streamlit web app + Google Sheets integration for user input tracking
+
+✅ MLOps Ready: Pickle model serialization and scikit-learn pipelines
+
 
 Business Value:
 🛡️ Spam Filtering: Blocks 99% of unwanted messages
