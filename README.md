@@ -20,15 +20,32 @@
 
 Key Features:
 
-✅ Text Preprocessing: Lowercasing, tokenization, special char removal, stemming
+✅ Text Preprocessing: 
+
+📌**Lowercasing, tokenization, special char removal, stemming**
+
+![Image](https://github.com/user-attachments/assets/ec0fa2e2-74ae-4002-9b42-b36d17f02930)
 
 ✅ Advanced NLP: TF-IDF vectorization + Multinomial Naïve Bayes
 
-✅ Visual EDA: Word clouds for spam vs. ham patterns
+✅ Visual EDA: 
+
+📌**Spam Word Cloud**
+
+![Image](https://github.com/user-attachments/assets/197f20ed-fe33-4267-b060-551b21fdacef)
+
+
+📌**Ham Word Cloud**
+
+![Image](https://github.com/user-attachments/assets/96ca117e-85f1-4c41-ac03-2eb909f5e688)
+
+
+
+✅ MLOps Ready: Pickle model serialization and scikit-learn pipelines
 
 ✅ Live Deployment: Streamlit web app + Google Sheets integration for user input tracking
 
-✅ MLOps Ready: Pickle model serialization and scikit-learn pipelines
+
 
 
 
@@ -36,6 +53,8 @@ Business Value:
 🛡️ Spam Filtering: Blocks 99% of unwanted messages
 
 📈 Data Collection: Logs predictions for model improvement
+
+![Image](https://github.com/user-attachments/assets/4807df2a-7687-42a1-b4a0-aa972b17a490)
 
 🔮 Scalable: Pipeline adapts to new spam patterns
 
