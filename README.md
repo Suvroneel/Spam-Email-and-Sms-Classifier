@@ -1,4 +1,4 @@
-🌟Spam Email/SMS Classifier | End-to-End ML Pipeline:
+<h1>🌟Spam Email/SMS Classifier | End-to-End ML Pipeline:</h1>
 
 ![Image](https://github.com/user-attachments/assets/99aaa030-1e1c-41a5-a476-f777c08184a6)
 
