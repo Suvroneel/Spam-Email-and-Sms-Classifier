@@ -1,7 +1,19 @@
 🌟Spam Email/SMS Classifier | End-to-End ML Pipeline:
 ==================================================
-Tech Stack:
-🐍 Python | 🤖 Scikit-learn | 📊 Pandas/NLTK | ☁️ Streamlit/Google Sheets API
+<h2> 🚀 &nbsp;Tech Stack</h2>
+<p align="left">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original-wordmark.svg" width="45" height="45"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" width="45" height="45"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-plain-wordmark.svg"  width="45" height="45"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/streamlit/streamlit-plain-wordmark.svg"  width="45" height="45"/>
+          
+          
+          
+                  
+
+
+</p>
+ Streamlit/Google Sheets API
 
 Key Features:
 
