@@ -1,6 +1,6 @@
 <h2>🌟Spam Email Classifier | End-to-End ML Pipeline:</h2>
 
-![Image](https://github.com/user-attachments/assets/99aaa030-1e1c-41a5-a476-f777c08184a6)
+![Image](https://github.com/user-attachments/assets/439129bc-b593-4926-9faa-0d5fe90c7e57)
 
 ==================================================
 <h2> 🚀 &nbsp;Tech Stack</h2>
