@@ -216,22 +216,32 @@ theme_bg_color = st.get_option("theme.backgroundColor")
 
 # Footer
 st.markdown("""
-
-        <style>
-        .footer {{
+    <style>
+        .footer {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            background-color: {theme_bg_color};
+            background-color: transparent;
             text-align: center;
             padding: 10px;
-        }}
+            font-size: 14px;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+        }
+        .footer a {
+            color: white;
+            text-shadow: 1px 1px 2px black;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
     </style>
-    <hr>
-    <div class ="footer" ;style='text-align: center; padding: 10px; font-size: 14px;'>
-        🚀 Made by <a href="https://www.linkedin.com/in/suvroneel-nathak-593602197/" target="_blank">Suvroneel Nathak</a> | 
+    <div class="footer">
+        🚀 Made by <a href="https://www.linkedin.com/in/suvroneel-nathak-593602197/" target="_blank">Suvroneel Nathak</a> |
         <a href="https://github.com/Suvroneel" target="_blank">GitHub</a>
     </div>
 """, unsafe_allow_html=True)
+
 
