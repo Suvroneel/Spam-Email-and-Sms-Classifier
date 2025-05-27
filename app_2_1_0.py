@@ -1,87 +1,120 @@
-import base64
-
 import nltk
 from textblob import TextBlob
-import toml
-# GSheets lib
-from streamlit_gsheets import GSheetsConnection
-
 import streamlit as st
 import pickle
-import string
 import pandas as pd
-from pandas import *
+from nltk.corpus import stopwords
+from nltk.stem import PorterStemmer
 
-from nltk import *
-from nltk.corpus import *
-from string import *
+# Google Sheets connection
+from streamlit_gsheets import GSheetsConnection
 
-
-
-
-# Establishing Google sheets connection
-
-conn = st.connection("gsheets", type=GSheetsConnection)
-
-# fetching exist data ue cols = no of cols , ttl = time to live
-existing_data = conn.read(worksheet="User Data", usecols=list(range(2)), ttl=5)
-
-existing_data = existing_data.dropna(how="all")  # droping empty vals
-
-# st.dataframe(existing_data)
-
-
+# Download NLTK resources
 nltk.download('stopwords')
 nltk.download('punkt')
 
+# Establish Google Sheets connection
+conn = st.connection("gsheets", type=GSheetsConnection)
+existing_data = conn.read(worksheet="User Data", usecols=list(range(2)), ttl=5)
+existing_data = existing_data.dropna(how="all")
+
+# Initialize PorterStemmer
 ps = PorterStemmer()
-#####backgrouund###
 
-def get_base64(bin_file):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
-
-
-def set_background(png_file):
-    bin_str = get_base64(png_file)
-    page_bg_img = '''
-    <style>
-    .stApp {
-    background-image: url("data:image/png;base64,%s");
+# Custom CSS for styling
+st.markdown("""
+<style>
+.stApp {
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
     background-size: cover;
-    }
-    </style>
-    ''' % bin_str
-    st.markdown(page_bg_img, unsafe_allow_html=True)
+    position: relative;
+    padding-bottom: 60px; /* Prevent content overlap with footer */
+}
+.stApp::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay */
+    z-index: 0;
+}
+.stApp > div {
+    position: relative;
+    z-index: 1;
+}
+.stApp header {
+    z-index: 0;
+}
+h1 {
+    font-size: 36px !important;
+    text-align: center;
+    margin-bottom: 30px;
+    color: white !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+h2, p, label, .stTextArea, .stButton > button {
+    color: white !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.stTextArea {
+    margin-bottom: 20px;
+}
+.stTextArea textarea {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid #00d4ff;
+    border-radius: 10px;
+    padding: 15px;
+    color: white !important;
+    font-size: 16px;
+}
+.stButton > button {
+    background-color: #00d4ff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 30px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.stButton > button:hover {
+    background-color: #00b0cc;
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(26, 37, 38, 0.8);
+    text-align: center;
+    padding: 10px;
+    z-index: 2;
+}
+.footer p {
+    color: white;
+    font-size: 16px;
+    margin: 0;
+}
+</style>
+""", unsafe_allow_html=True)
 
-set_background('13.jpg')
-
-
-
-################
-###############Navbar####################
-
-
-# st.set_page_config(layout="wide")
-
-
+# Navbar
 st.markdown(
     '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">',
     unsafe_allow_html=True)
 
 nav_bar = """
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark"
-         style="background-color: black">
+     style="background-color: #1a2526; padding: 15px 0;">
   <div class="container-fluid">
-    <a class="navbar-brand text-white" href="https://www.linkedin.com/in/suvroneel-nathak-593602197/" >Suvroneel Nathak</a>
+    <a class="navbar-brand text-white" href="https://www.linkedin.com/in/suvroneel-nathak-593602197/">Suvroneel Nathak</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active " aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="#" style="color: #00d4ff !important;">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" href="#">About Us</a>
@@ -90,145 +123,83 @@ nav_bar = """
           <a class="nav-link text-white" href="#">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/Suvroneel">My Other Projects</a>
+          <a class="nav-link text-white" href="https://github.com/Suvroneel">My Other Projects</a>
         </li> 
       </ul>
     </div>
   </div>
 </nav>
+<style>
+.navbar-nav .nav-link:hover {
+    color: #00d4ff !important;
+    transition: color 0.3s ease;
+}
+</style>
 """
 st.markdown(nav_bar, unsafe_allow_html=True)
 
-# Short description of the app
-
-# set streamlit header z-index
-st.markdown('''
-<style>
-.stApp header {
-    z-index: 0;
-}
-</style>
-''', unsafe_allow_html=True)
-
-
-################################################
-
+# Text transformation function
 def transform_text(text):
     text = text.lower()
     text = nltk.word_tokenize(text)
     y = []
-    # Removing Special Characters ; text is a array now
     for i in text:
         if i.isalnum():
             y.append(i)
-
-    # copying values of y to text and emptying y
     text = y[:]
     y.clear()
-
-    # Removing stop words & punctutations
     for i in text:
         if i not in stopwords.words('english') and i not in string.punctuation:
             y.append(i)
-
     text = y[:]
     y.clear()
-
     for i in text:
         y.append(ps.stem(i))
-
     return " ".join(y)
 
-
-# rb - read
-
+# Load model and vectorizer
 tfidf = pickle.load(open('./Model/vectorizer_mkii.pkl', 'rb'))
 model = pickle.load(open('./Model/model_mkii.pkl', 'rb'))
 
+# Main app
 st.title("Spam Email Classifier (v 2.1.0)")
 
-
-
-input_sms = st.text_area("Enter the message")  # takes input message
-
+input_sms = st.text_area("Enter the message", key="input_sms", help="Paste your email or SMS here")
 prediction = ""
 
-b = TextBlob(input_sms)
-
-# If button is pressed
+# Prediction logic
 if st.button('Predict'):
+    with st.spinner("Classifying..."):
+        if not input_sms:
+            st.warning("Write a message first.")
+            st.stop()
 
-    if not input_sms:
-        st.warning("Write a message first .")
-        st.stop()
+        b = TextBlob(input_sms)
+        if b.correct() == input_sms:
+            transformed_sms = transform_text(input_sms)
+            vector_input = tfidf.transform([transformed_sms])
+            result = model.predict(vector_input)[0]
 
-    if b.correct() == input_sms:
+            if result == 1:
+                st.markdown('<span style="color: #ff4d4d; font-size: 24px; font-weight: bold;">Spam 🔴</span>', unsafe_allow_html=True)
+                prediction = "Spam"
+            else:
+                st.markdown('<span style="color: #00cc66; font-size: 24px; font-weight: bold;">Not Spam 🟢</span>', unsafe_allow_html=True)
+                prediction = "Not Spam"
 
-        # 1 pre-process
-
-        transformed_sms = transform_text(input_sms)
-
-        # 2 vectorizevector input
-        vector_input = tfidf.transform([transformed_sms])
-
-        # 3 predict - extracting 0th item since spam are in 1 , 0
-        result = model.predict(vector_input)[0]
-
-        # 4 Display
-        if result == 1:
-            st.header("Spam")
-            prediction = "Spam"
-
+            input_data = pd.DataFrame([{"Input Sentence": input_sms, "Output": prediction}])
+            updated_df = pd.concat([existing_data, input_data], ignore_index=True)
+            conn.update(worksheet="User Data", data=updated_df)
         else:
-            st.header("Not spam")
-            prediction = "Not spam"
-
-        input_data = pd.DataFrame(
-            [
-                {
-                    "Input Sentence": input_sms,
-                    "Output": prediction
-                }
-            ]
-        )
-        # add inputdata to existing data
-        updated_df = pd.concat([existing_data, input_data], ignore_index=True)
-
-        # update goggle sheets
-        conn.update(worksheet="User Data", data=updated_df)
-
-    else:
-        st.header("Spam")
-        prediction = "Spam"
-        input_data = pd.DataFrame(
-            [
-                {
-                    "Input Sentence": input_sms,
-                    "Output": prediction
-                }
-            ]
-        )
-        # add inputdata to existing data
-        updated_df = pd.concat([existing_data, input_data], ignore_index=True)
-        conn.update(worksheet="User Data", data=updated_df)
-
-theme_bg_color = st.get_option("theme.backgroundColor")
+            st.markdown('<span style="color: #ff4d4d; font-size: 24px; font-weight: bold;">Spam 🔴</span>', unsafe_allow_html=True)
+            prediction = "Spam"
+            input_data = pd.DataFrame([{"Input Sentence": input_sms, "Output": prediction}])
+            updated_df = pd.concat([existing_data, input_data], ignore_index=True)
+            conn.update(worksheet="User Data", data=updated_df)
 
 # Footer
-st.markdown(f"""
-    <style>
-        .footer {{
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: {theme_bg_color};
-            text-align: center;
-            padding: 10px;
-        }}
-    </style>
-    <div class="footer">
-        <p style="font-size: 16px;">Created by Suvroneel Nathak</p>
-    </div>
+st.markdown("""
+<div class="footer">
+    <p>Created by Suvroneel Nathak</p>
+</div>
 """, unsafe_allow_html=True)
-
