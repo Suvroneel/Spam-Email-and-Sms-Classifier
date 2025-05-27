@@ -81,7 +81,7 @@ st.markdown("""
 # Main container
 st.markdown('<div class="main-container">', unsafe_allow_html=True)
 
-st.title("📧 Spam Email Classifier (v 2.1.0)")
+st.title(" Spam Email Classifier (v 2.1.0) - Test")
 
 input_sms = st.text_area("Enter the message")
 
