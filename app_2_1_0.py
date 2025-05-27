@@ -216,8 +216,20 @@ theme_bg_color = st.get_option("theme.backgroundColor")
 
 # Footer
 st.markdown("""
+
+        <style>
+        .footer {{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: {theme_bg_color};
+            text-align: center;
+            padding: 10px;
+        }}
+    </style>
     <hr>
-    <div style='text-align: center; padding: 10px; font-size: 14px;'>
+    <div class ="footer" ;style='text-align: center; padding: 10px; font-size: 14px;'>
         🚀 Made by <a href="https://www.linkedin.com/in/suvroneel-nathak-593602197/" target="_blank">Suvroneel Nathak</a> | 
         <a href="https://github.com/Suvroneel" target="_blank">GitHub</a>
     </div>
