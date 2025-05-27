@@ -215,20 +215,11 @@ if st.button('Predict'):
 theme_bg_color = st.get_option("theme.backgroundColor")
 
 # Footer
-st.markdown(f"""
-    <style>
-        .footer {{
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: {theme_bg_color};
-            text-align: center;
-            padding: 10px;
-        }}
-    </style>
-    <div class="footer">
-        <p style="font-size: 16px;">Created by Suvroneel Nathak</p>
+st.markdown("""
+    <hr>
+    <div style='text-align: center; padding: 10px; font-size: 14px;'>
+        🚀 Made by <a href="https://www.linkedin.com/in/suvroneel-nathak-593602197/" target="_blank">Suvroneel Nathak</a> | 
+        <a href="https://github.com/Suvroneel" target="_blank">GitHub</a>
     </div>
 """, unsafe_allow_html=True)
 
