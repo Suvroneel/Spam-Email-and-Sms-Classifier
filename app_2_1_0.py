@@ -162,7 +162,7 @@ tfidf = pickle.load(open('./Model/vectorizer_mkii.pkl', 'rb'))
 model = pickle.load(open('./Model/model_mkii.pkl', 'rb'))
 
 # Main app
-st.title("Spam Email Classifier (v 2.1.0)")
+st.title("Spam Email Classifier (v 2.1.0- test)")
 
 input_sms = st.text_area("Enter the message", key="input_sms", help="Paste your email or SMS here")
 prediction = ""
