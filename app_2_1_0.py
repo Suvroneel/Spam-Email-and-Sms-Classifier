@@ -176,11 +176,11 @@ if st.button('Predict'):
 
         # 4 Display
         if result == 1:
-            st.header("Spam")
+            st.header("🚨 This looks like **Spam**!")
             prediction = "Spam"
 
         else:
-            st.header("Not spam")
+            st.header("✅ This looks **Safe** (Not Spam)")
             prediction = "Not spam"
 
         input_data = pd.DataFrame(
