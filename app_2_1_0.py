@@ -176,11 +176,11 @@ if st.button('🚀 Predict'):
 
         # 4 Display
         if result == 1:
-            st.header("🚨 This looks like **Spam**!")
+            st.error("🚨 This looks like **Spam**!")
             prediction = "Spam"
 
         else:
-            st.header("✅ This looks **Safe** (Not Spam)")
+            st.success("✅ This looks **Safe** (Not Spam)")
             prediction = "Not spam"
 
         input_data = pd.DataFrame(
@@ -198,7 +198,7 @@ if st.button('🚀 Predict'):
         conn.update(worksheet="User Data", data=updated_df)
 
     else:
-        st.header("Spam")
+        st.error("🚨 This looks like **Spam**!")
         prediction = "Spam"
         input_data = pd.DataFrame(
             [
