@@ -145,14 +145,18 @@ def transform_text(text):
 tfidf = pickle.load(open('./Model/vectorizer_mkii.pkl', 'rb'))
 model = pickle.load(open('./Model/model_mkii.pkl', 'rb'))
 
-#title changes
+#1 title changes
 st.markdown("""
     <h1 style='font-family: "Comic Sans MS", cursive; color: #FFFFFF;'>
         Spam Email Classifier (v 2.1.0)
     </h1>
 """, unsafe_allow_html=True)
-
-
+#2 title style
+st.markdown("""
+    <style>
+        .st-emotion-cache-10trblm { display: none !important; }
+    </style>
+""", unsafe_allow_html=True)
 
 ####3
 
