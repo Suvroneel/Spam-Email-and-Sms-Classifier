@@ -147,7 +147,7 @@ model = pickle.load(open('./Model/model_mkii.pkl', 'rb'))
 
 #title changes
 st.markdown("""
-    <h1 style='font-family: "Comic Sans MS", cursive; color: #FF6347;'>
+    <h1 style='font-family: "Comic Sans MS", cursive; color: #FFFFFF;'>
         Spam Email Classifier (v 2.1.0)
     </h1>
 """, unsafe_allow_html=True)
