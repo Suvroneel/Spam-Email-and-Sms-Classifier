@@ -145,12 +145,17 @@ def transform_text(text):
 tfidf = pickle.load(open('./Model/vectorizer_mkii.pkl', 'rb'))
 model = pickle.load(open('./Model/model_mkii.pkl', 'rb'))
 
-#Title
+#title changes
 st.markdown("""
     <style>
-        .st-emotion-cache-10trblm { display: none !important; }
+        .st-emotion-cache-yinll1 { display: none !important; }
     </style>
 """, unsafe_allow_html=True)
+
+
+
+
+####3
 
 
 
