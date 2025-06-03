@@ -147,11 +147,9 @@ model = pickle.load(open('./Model/model_mkii.pkl', 'rb'))
 
 #title changes
 st.markdown("""
-    <style>
-        .st-emotion-cache-gi0tri, .st-emotion-cache-yinll1 {
-            display: none !important;
-        }
-    </style>
+    <h1 style='font-family: "Comic Sans MS", cursive; color: #FF6347;'>
+        Spam Email Classifier (v 2.1.0)
+    </h1>
 """, unsafe_allow_html=True)
 
 
@@ -160,7 +158,7 @@ st.markdown("""
 
 
 
-st.title("Spam Email Classifier (v 2.1.0)")
+#st.title("Spam Email Classifier (v 2.1.0)")
 
 
 
