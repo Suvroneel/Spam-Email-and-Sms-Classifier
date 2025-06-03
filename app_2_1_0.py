@@ -148,10 +148,11 @@ model = pickle.load(open('./Model/model_mkii.pkl', 'rb'))
 #title changes
 st.markdown("""
     <style>
-        .st-emotion-cache-yinll1 { display: none !important; }
+        .st-emotion-cache-gi0tri, .st-emotion-cache-yinll1 {
+            display: none !important;
+        }
     </style>
 """, unsafe_allow_html=True)
-
 
 
 
