@@ -151,12 +151,9 @@ st.markdown("""
         Spam Email Classifier (v 2.1.0)
     </h1>
 """, unsafe_allow_html=True)
+
 #2 title style
-st.markdown("""
-    <style>
-        .st-emotion-cache-10trblm { display: none !important; }
-    </style>
-""", unsafe_allow_html=True)
+
 
 ####3
 
