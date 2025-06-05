@@ -153,19 +153,9 @@ model = pickle.load(open('./Model/model_mkii.pkl', 'rb'))
 #1 title changes
 st.markdown("""
     <h1 style='font-family: "Comic Sans MS", cursive; color: #FFFFFF;'>
-        Spam Email and Sms Classifier (v 2.1.0)
+        Spam Email Classifier (v 2.1.0)
     </h1>
 """, unsafe_allow_html=True)
-
-#2 title style
-
-
-####3
-
-
-
-#st.title("Spam Email Classifier (v 2.1.0)")
-
 
 
 input_sms = st.text_area("Enter the message")  # takes input message
