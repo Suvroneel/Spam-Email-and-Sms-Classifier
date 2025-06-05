@@ -17,6 +17,11 @@ from nltk.corpus import *
 from string import *
 
 
+# --- Streamlit Config ---
+st.set_page_config(
+    page_title="Spam Email and Sms Classifier (v 2.1.0)",
+    page_icon="📧",
+)
 
 
 # Establishing Google sheets connection
@@ -148,7 +153,7 @@ model = pickle.load(open('./Model/model_mkii.pkl', 'rb'))
 #1 title changes
 st.markdown("""
     <h1 style='font-family: "Comic Sans MS", cursive; color: #FFFFFF;'>
-        Spam Email Classifier (v 2.1.0)
+        Spam Email and Sms Classifier (v 2.1.0)
     </h1>
 """, unsafe_allow_html=True)
 
