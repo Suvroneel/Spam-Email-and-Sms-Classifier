@@ -19,7 +19,7 @@ from string import *
 
 # --- Streamlit Config ---
 st.set_page_config(
-    page_title="Spam Email and Sms Classifier (v 2.1.0)",
+    page_title="Spam Email Classifier (v 2.1.0)",
     page_icon="📧",
 )
 
