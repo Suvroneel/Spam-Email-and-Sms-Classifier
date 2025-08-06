@@ -15,7 +15,9 @@ from pandas import *
 from nltk import *
 from nltk.corpus import *
 from string import *
-
+# Download required NLTK corpora at runtime (first run only)
+nltk.download('wordnet')
+nltk.download('omw-1.4')
 
 # --- Streamlit Config ---
 st.set_page_config(
@@ -252,5 +254,6 @@ st.markdown("""
         <a href="https://github.com/Suvroneel" target="_blank">GitHub</a>
     </div>
 """, unsafe_allow_html=True)
+
 
 
