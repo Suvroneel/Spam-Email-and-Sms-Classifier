@@ -16,9 +16,11 @@ from nltk import *
 from nltk.corpus import *
 from string import *
 # Download required NLTK corpora at runtime (first run only)
+import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
 nltk.download('wordnet')
 nltk.download('omw-1.4')
-
 # --- Streamlit Config ---
 st.set_page_config(
     page_title="Spam Email Classifier (v 2.1.0)",
@@ -254,6 +256,7 @@ st.markdown("""
         <a href="https://github.com/Suvroneel" target="_blank">GitHub</a>
     </div>
 """, unsafe_allow_html=True)
+
 
 
 
