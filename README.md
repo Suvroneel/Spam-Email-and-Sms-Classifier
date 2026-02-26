@@ -6,7 +6,7 @@ Production-ready spam detection pipeline achieving **97%+ accuracy** on email cl
 
 **Business Impact:** Automated spam filtering reduces manual email review workload by 95%, with continuous learning infrastructure enabling model improvement through production feedback loops.
 
-🔗 **Live Demo:** [Streamlit Deployment](#) *(if deployed)*
+🔗 **Live Demo:** [Streamlit Deployment](https://spam-email-and-sms-classifier-xghzt3pj3bvd5ltzqp6rs8.streamlit.app/) 
 
 ![Spam Classifier Interface](https://github.com/user-attachments/assets/4807df2a-7687-42a1-b4a0-aa972b17a490)
 
