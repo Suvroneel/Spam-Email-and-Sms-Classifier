@@ -8,8 +8,6 @@ Production-ready spam detection pipeline achieving **97%+ accuracy** on email cl
 
 🔗 **Live Demo:** [Streamlit Deployment](https://spam-email-and-sms-classifier-xghzt3pj3bvd5ltzqp6rs8.streamlit.app/) 
 
-![Spam Classifier Interface](https://github.com/user-attachments/assets/4807df2a-7687-42a1-b4a0-aa972b17a490)
-
 ---
 
 ## System Architecture
